@@ -20,8 +20,6 @@
     "@babel/preset-env": "^7.22.4",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
-    "eslint": "^8.42.0",
-    "eslint-webpack-plugin": "^4.0.1",
     "style-loader": "^3.3.3",
     "thread-loader": "^4.0.2",
     "webpack": "^5.85.1",
