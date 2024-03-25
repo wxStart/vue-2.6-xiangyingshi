@@ -3,12 +3,17 @@ import defineReactive from "./defineReactive";
 
 import { arrayMethods } from "./array";
 
+import Dep from "./Dep";
+
 /**
  * 将一个正常object转化为每一层的属性都是响应式的对象
  */
 export default class Observer {
   constructor(value) {
     console.log("Observer constructor ", value);
+
+    this.dep = new Dep();
+    
     def(value, "__ob__", this, false);
     if (Array.isArray(value)) {
       // 强行改变  数组的原型为 arrayMethods这个对象

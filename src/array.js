@@ -42,13 +42,15 @@ methods.forEach((methodName) => {
         case "splice":
           // 下标为2 之后才是新增的项目
           // splice(下标，删除个数,后面才是新增的数据)
-          inserted =  argu.slice(2);
+          inserted = argu.slice(2);
           break;
       }
       if (inserted.length) {
         // Observer.observeArray
         ob.observeArray(inserted);
       }
+      // 也要通知
+      ob.dep.notify();
 
       return original.apply(this, argu);
     },
